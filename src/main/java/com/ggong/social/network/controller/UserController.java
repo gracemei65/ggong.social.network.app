@@ -35,7 +35,7 @@ public class UserController {
         return new ResponseEntity<ResponseObjectService>(userService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/users/profile")
+    @PostMapping("/users/profile")
     public ResponseEntity<ResponseObjectService> findById(@RequestBody IdObjectEntity inputId) {
         return new ResponseEntity<ResponseObjectService>(userService.findById(inputId.getId()), HttpStatus.OK);
     }
@@ -50,12 +50,12 @@ public class UserController {
         return new ResponseEntity<ResponseObjectService>(userService.unfollowUser(doubleId), HttpStatus.OK);
     }
 
-    @GetMapping("/users/getfollowing")
+    @PostMapping("/users/getfollowing")
     public ResponseEntity<ResponseObjectService> findFollowing(@RequestBody IdObjectEntity inputId) {
         return new ResponseEntity<ResponseObjectService>(userService.findFollowing(inputId.getId()), HttpStatus.OK);
     }
 
-    @GetMapping("/users/getfollower")
+    @PostMapping("/users/getfollower")
     public ResponseEntity<ResponseObjectService> findFollower(@RequestBody IdObjectEntity inputId) {
         return new ResponseEntity<ResponseObjectService>(userService.findFollower(inputId.getId()), HttpStatus.OK);
     }
